@@ -387,7 +387,6 @@ var width = $("#map").width(),
 	filteredData,
 	latLngs = [],
 	pointsOverlaySQFT,
-	lineWidth,
 	radius;
 	
 onload = ready();
@@ -519,15 +518,15 @@ function ready(){
 		})
 		.on("mouseover", function(d, i){
 			tooltip.transition().duration(0); 
-			$(this).attr("style", "cursor: pointer; fill: #eef442; fill-opacity: 0.5; stroke-width: 0;");			
+			$(this).attr("style", "cursor: pointer; fill: #eef442; fill-opacity: 0.5;");			
 		})
 		.on("mouseout", function(d, i){			
-			$(this).attr("style", 	"fill: #009fff; fill-opacity: 0.5; stroke-width: 0;" );
+			$(this).attr("style", 	"fill: #009fff; fill-opacity: 0.5;" );
 			return tooltip.transition().delay(500).style("visibility", "hidden");
 		});
 		
 		pointsUpd.attr("r", function(d) { return radius(d["Total Construction Floor Area"]  / proj.scale); });
-		lineWidth = pointsUpd.style("stroke-width", 1 / proj.scale + "px");
+		pointsUpd.attr("stroke-width", 1 / proj.scale);
 		
 				
 		
