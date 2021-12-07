@@ -1211,7 +1211,11 @@ function ready(){
 	
 
 	d3.csv("data/Active NB_Alt 1 Enlargement Permits BIS and DOB NOW.csv",function(data){
-				points = data.map(function(d){
+				points = data.filter(function(d) {
+					if( !isNaN(+d["Latitude Point"]) && !isNaN(+d["Longitude Point"]) ) {
+						return d;
+					}
+				}).map(function(d){
 				d.latLng = [+d["Latitude Point"],+d["Longitude Point"]];
 				d.bin = d["BIN Number"];
 				d.address = d["Job Location Street Name"].toUpperCase();
