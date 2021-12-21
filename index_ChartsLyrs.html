@@ -87,6 +87,12 @@ tr.shown td.details-control {
 	stroke: #fff;
 	
 }
+.pointStories{
+	fill: #66A61E;
+	fill-opacity: .5;
+	stroke: #fff;
+	
+}
 .tooltipSQFT {
 	color: #222;
 	background: #fff;
@@ -120,6 +126,17 @@ tr.shown td.details-control {
 	position: absolute;
 	visibility: hidden;
 }
+.tooltipStories {
+	color: #222;
+	background: #fff;
+	padding: .5em;
+	text-shadow: #f5f5f5 0 1px 0;
+	border-radius: 7px; 
+	box-shadow: 0px 0px 2px 0px #a6a6a6; 
+	opacity: 0.9; 
+	position: absolute;
+	visibility: hidden;
+}
 .dataTables_empty {
   display:none;
 }
@@ -139,6 +156,9 @@ tr.shown td.details-control {
 		visibility:hidden;
 	}
 	.legendCost {
+		visibility:hidden;
+	}
+	.legendStories {
 		visibility:hidden;
 	}
 	.ui {
@@ -165,10 +185,17 @@ tr.shown td.details-control {
 	#summary1_estcost {
 		font-size: 40px !important;
 	}	
+	.summarytxt_stories {
+		font-size: 18px !important;
+	}
+	#summary1_stories {
+		font-size: 40px !important;
+	}
 	.summarytxt {
 		font-size: 18px !important;
 	}
 }
+
 .dataTables_filter input { width: 150px }
 
 #loadpage{
@@ -204,6 +231,7 @@ svg {
 #chart-01{
     box-sizing: border-box;
     width: 100%;
+	<!-- height: 150px; -->
 	height: 100%;
     <!-- border: 0.5px solid gray; -->
     float: left;
@@ -213,6 +241,7 @@ svg {
 #chart-boro-sqft{
     box-sizing: border-box;
     width: 100%;
+	<!-- height: 250px; -->
 	height: 100%;
     float: left;
 	background-color: #c7c7c7;
@@ -228,6 +257,7 @@ svg {
 #chart-boro-propDwell{
     box-sizing: border-box;
     width: 100%;
+	<!-- height: 250px; -->
 	height: 100%;
     float: left;
 	background-color: #c7c7c7;
@@ -237,6 +267,17 @@ svg {
 #chart-boro-estCost{
     box-sizing: border-box;
     width: 100%;
+	<!-- height: 250px; -->
+	height: 100%;
+    float: left;
+	background-color: #c7c7c7;
+	margin-bottom: 10px;
+	display: none;
+}
+#chart-boro-stories{
+    box-sizing: border-box;
+    width: 100%;
+	<!-- height: 250px; -->
 	height: 100%;
     float: left;
 	background-color: #c7c7c7;
@@ -251,6 +292,13 @@ svg {
 	background-color: #fff;
 }
 #boroestcost{
+	margin-top: 10px;
+	padding: 0px;
+	height: 225px;
+	width: 100%;
+	background-color: #fff;
+}
+#borostories{
 	margin-top: 10px;
 	padding: 0px;
 	height: 225px;
@@ -280,6 +328,14 @@ svg {
 	background-color: #fff;
 	display: none;
 }
+#cdstories{
+	margin-top: 10px;
+	padding: 0px;
+	height: 190px;
+	width: 100%;
+	background-color: #fff;
+	display: none;
+}
 #jobsqft{
 	margin-top: 10px;
 	padding: 0px;
@@ -296,6 +352,14 @@ svg {
 	display: none;
 }
 #jobestcost{
+	margin-top: 10px;
+	padding: 0px;
+	height: 170px;
+	width: 100%;
+	background-color: #fff;
+	display: none;
+}
+#jobstories{
 	margin-top: 10px;
 	padding: 0px;
 	height: 170px;
@@ -364,6 +428,17 @@ svg {
 	padding-top: 10px;
 	display: none;
 }
+.summarytxt_stories{
+	font-size: 28px;
+	font-weight: bold;
+	color: #FFFFFF;
+	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	line-height: 97%;
+	padding-top: 10px;
+	display: none;
+}
 .subtxt{
 	font-size: 15px;
 	font-style: italic;
@@ -398,6 +473,16 @@ svg {
 	font-size: 50px;
 	font-weight: bold;
 	color: #f44336;
+	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;	
+	text-align: center;
+	line-height: 150%;
+	
+}
+#summary1_stories{
+	font-size: 50px;
+	font-weight: bold;
+	color: #66A61E;
 	font-family: 'Open Sans', sans-serif;
 	font-family: 'Roboto', sans-serif;	
 	text-align: center;
@@ -505,6 +590,38 @@ svg {
 		position: absolute;	
 		right: 8px;
 }
+.legendStories {
+		padding: 6px 10px;
+		font: 14px/16px Arial, Helvetica, sans-serif;
+		background: white;
+		background: rgba(255,255,255,0.8);
+		border: 2px solid #707070;
+		box-shadow: 0 0 15px rgba(0,0,0,0.2);
+		border-radius: 7px;
+		width: 150px;
+
+}
+#legendTitleStories {
+		text-align: center;
+		margin-bottom: 15px;
+		font-variant: small-caps;
+		font-size: 15px;
+		font-weight: bold;
+}
+.symbolsContainerStories {
+		float: left;
+		margin-left: 50px;
+}
+.legendCircleStories {
+		border-radius: 50%;
+		border: 1px solid #fff;
+		background: rgba(102, 166, 30, .4);
+		display: inline-block;
+}
+.legendValueStories {
+		position: absolute;	
+		right: 8px;
+}
 .ui {
 	top: 225px;
 	left: 12px;
@@ -551,6 +668,10 @@ svg {
 							<input type="radio" name="o" value="cost" id="cost" class="form-check-input">
 							<label class="form-check-label" for="cost">Estimated Cost</label>
 						  </div>
+						  <div class="form-check">
+							<input type="radio" name="o" value="stories" id="stories" class="form-check-input">
+							<label class="form-check-label" for="stories">Proposed Stories</label>
+						  </div>
 						</div>
 					  </form>	
 					</div>
@@ -558,7 +679,7 @@ svg {
 			  </div>
 		  </div>
 			  <div class="col-lg-3" style="height:100%">
-				<div class="newchart" style="padding:5px 5px 0px 5px;border:1px solid black;height:100%;width:100%">
+				<div class="newchart" style="padding:5px 5px 0px 5px;border:1px solid black;height:100%;width:100%;">
 					<div class="chart-wrapper">
 					  <div class="chart-stage" id="chart-01">
 						<div class="summarytxt_sqft" >TOTAL CITYWIDE </br>SQUARE FOOTAGE: </br>
@@ -569,6 +690,9 @@ svg {
 						</div>
 						<div class="summarytxt_estcost" >TOTAL CITYWIDE </br>ESTIMATED COST ($): </br>
 							<span id="summary1_estcost"></span>
+						</div>
+						<div class="summarytxt_stories" >TOTAL CITYWIDE </br>PROPOSED STORIES: </br>
+							<span id="summary1_stories"></span>
 						</div>
 					  </div>
 					</div>
@@ -582,6 +706,9 @@ svg {
 					  <div class="chart-stage" id="chart-boro-estCost">
 						<svg id="boroestcost"></svg>
 					  </div>
+					  <div class="chart-stage" id="chart-boro-stories">
+						<svg id="borostories"></svg>
+					  </div>
 					</div>
 					<div class="chart-wrapper">
 					  <div class="chart-stage" id="chart-cd">
@@ -589,6 +716,7 @@ svg {
 						<svg id="cdsqft"></svg>
 						<svg id="cdpropdwell"></svg>
 						<svg id="cdestcost"></svg>
+						<svg id="cdstories"></svg>
 					  </div>
 					</div>
 					<div class="chart-wrapper">
@@ -598,6 +726,7 @@ svg {
 						<svg id="jobsqft"></svg>
 						<svg id="jobdwell"></svg>
 						<svg id="jobestcost"></svg>
+						<svg id="jobstories"></svg>
 					  </div>
 					</div>
 				</div>
@@ -667,6 +796,15 @@ var tooltipCost = d3.select('#map').append('div')//var tooltip = d3.select('body
 		tooltipCost.transition().delay(500).style('visibility', 'hidden');
 	})
 	.attr('class', 'tooltipCost');
+
+var tooltipStories = d3.select('#map').append('div')//var tooltip = d3.select('body').append('div')
+	.on('mouseover', function(d, i){
+		tooltipStories.transition().duration(0);
+	})
+	.on('mouseout', function(d, i){
+		tooltipStories.transition().delay(500).style('visibility', 'hidden');
+	})
+	.attr('class', 'tooltipStories');
 	
 var width = $("#map").width(),
 	height = $("#map").height(),
@@ -677,9 +815,11 @@ var width = $("#map").width(),
 	pointsOverlaySQFT,
 	pointsOverlayDwell,
 	pointsOverlayCost,
+	pointsOverlayStories,
 	legendSQFT,
 	legendPropDwell,
 	legendCost,
+	legendStories,
 	cat,
 	radius;
 	
@@ -691,34 +831,41 @@ function ready(){
 	var sqftRadio = document.querySelector('input[id="sqft"]');
 		dwellRadio = document.querySelector('input[id="dwell"]');
 		costRadio = document.querySelector('input[id="cost"]');
+		storiesRadio = document.querySelector('input[id="stories"]');
 
 	sqftRadio.onchange = function(){
 			if(this.checked){
 				d3.selectAll(".pointDwell").style("display", "none");
 				d3.selectAll(".pointCost").style("display", "none");
+				d3.selectAll(".pointStories").style("display", "none");
 				d3.selectAll(".pointSQFT").style("display", "block");	
 
 				d3.selectAll(".legendSQFT").style("display", "block");
 				d3.selectAll(".legendPropDwell").style("display", "none");
 				d3.selectAll(".legendCost").style("display", "none");
+				d3.selectAll(".legendStories").style("display", "none");
 				
 				d3.selectAll(".summarytxt_sqft").style("display", "block");
 				d3.selectAll(".summarytxt_propdwell").style("display", "none");
 				d3.selectAll(".summarytxt_estcost").style("display", "none");
+				d3.selectAll(".summarytxt_stories").style("display", "none");
 				
 				d3.selectAll("#chart-boro-sqft").style("display", "block");
 				d3.selectAll("#chart-boro-propDwell").style("display", "none");
 				d3.selectAll("#chart-boro-estCost").style("display", "none");
+				d3.selectAll("#chart-boro-stories").style("display", "none");
 				window.dispatchEvent(new Event('resize')); //ALLOW CHART TO FILL WIDTH OF DIV
 				
 				d3.selectAll("#cdsqft").style("display", "block");
 				d3.selectAll("#cdpropdwell").style("display", "none");
 				d3.selectAll("#cdestcost").style("display", "none");
+				d3.selectAll("#cdstories").style("display", "none");
 				window.dispatchEvent(new Event('resize')); //ALLOW CHART TO FILL WIDTH OF DIV
 				
 				d3.selectAll("#jobsqft").style("display", "block");
 				d3.selectAll("#jobdwell").style("display", "none");
 				d3.selectAll("#jobestcost").style("display", "none");
+				d3.selectAll("#jobstories").style("display", "none");
 				window.dispatchEvent(new Event('resize')); //ALLOW CHART TO FILL WIDTH OF DIV
 				
 				d3.selectAll(".pointDwell")
@@ -730,6 +877,11 @@ function ready(){
 					.classed("selected", function(d){
 						return false;
 					})
+
+				d3.selectAll(".pointStories")
+				.classed("selected", function(d){
+					return false;
+				})
 			}
 	};
 
@@ -737,29 +889,35 @@ function ready(){
 			if(this.checked){
 				d3.selectAll(".pointSQFT").style("display", "none");
 				d3.selectAll(".pointCost").style("display", "none");
+				d3.selectAll(".pointStories").style("display", "none");
 				d3.selectAll(".pointDwell").style("display", "block");	
 
 				d3.selectAll(".legendSQFT").style("display", "none");
 				d3.selectAll(".legendCost").style("display", "none");
+				d3.selectAll(".legendStories").style("display", "none");
 				d3.selectAll(".legendPropDwell").style("display", "block");		
 				
 				d3.selectAll(".summarytxt_sqft").style("display", "none");
 				d3.selectAll(".summarytxt_propdwell").style("display", "block");
 				d3.selectAll(".summarytxt_estcost").style("display", "none");
+				d3.selectAll(".summarytxt_stories").style("display", "none");
 
 				d3.selectAll("#chart-boro-sqft").style("display", "none");
 				d3.selectAll("#chart-boro-propDwell").style("display", "block");
 				d3.selectAll("#chart-boro-estCost").style("display", "none");
+				d3.selectAll("#chart-boro-stories").style("display", "none");
 				window.dispatchEvent(new Event('resize')); //ALLOW CHART TO FILL WIDTH OF DIV
 				
 				d3.selectAll("#cdsqft").style("display", "none");
 				d3.selectAll("#cdpropdwell").style("display", "block");
 				d3.selectAll("#cdestcost").style("display", "none");
+				d3.selectAll("#cdstories").style("display", "none");
 				window.dispatchEvent(new Event('resize')); //ALLOW CHART TO FILL WIDTH OF DIV
 				
 				d3.selectAll("#jobsqft").style("display", "none");
 				d3.selectAll("#jobdwell").style("display", "block");
 				d3.selectAll("#jobestcost").style("display", "none");
+				d3.selectAll("#jobstories").style("display", "none");
 				window.dispatchEvent(new Event('resize')); //ALLOW CHART TO FILL WIDTH OF DIV
 				
 				d3.selectAll(".pointSQFT")
@@ -770,7 +928,11 @@ function ready(){
 				d3.selectAll(".pointCost")
 					.classed("selected", function(d){
 						return false;
-					})					
+					})	
+				d3.selectAll(".pointStories")
+				.classed("selected", function(d){
+					return false;
+				})				
 			}
 	};	
 
@@ -779,28 +941,34 @@ function ready(){
 			if(this.checked){
 				d3.selectAll(".pointSQFT").style("display", "none");
 				d3.selectAll(".pointCost").style("display", "block");
-				d3.selectAll(".pointDwell").style("display", "none");	
+				d3.selectAll(".pointDwell").style("display", "none");
+				d3.selectAll(".pointStories").style("display", "none");	
 
 				d3.selectAll(".legendSQFT").style("display", "none");
 				d3.selectAll(".legendCost").style("display", "block");
 				d3.selectAll(".legendPropDwell").style("display", "none");	
+				d3.selectAll(".legendStories").style("display", "none");
 
 				d3.selectAll(".summarytxt_sqft").style("display", "none");
 				d3.selectAll(".summarytxt_propdwell").style("display", "none");
+				d3.selectAll(".summarytxt_stories").style("display", "none");
 				d3.selectAll(".summarytxt_estcost").style("display", "block");	
 
 				d3.selectAll("#chart-boro-sqft").style("display", "none");
 				d3.selectAll("#chart-boro-propDwell").style("display", "none");
+				d3.selectAll("#chart-boro-stories").style("display", "none");
 				d3.selectAll("#chart-boro-estCost").style("display", "block");
 				window.dispatchEvent(new Event('resize')); //ALLOW CHART TO FILL WIDTH OF DIV	
 
 				d3.selectAll("#cdsqft").style("display", "none");
 				d3.selectAll("#cdpropdwell").style("display", "none");
+				d3.selectAll("#cdstories").style("display", "none");
 				d3.selectAll("#cdestcost").style("display", "block");
 				window.dispatchEvent(new Event('resize')); //ALLOW CHART TO FILL WIDTH OF DIV
 
 				d3.selectAll("#jobsqft").style("display", "none");
 				d3.selectAll("#jobdwell").style("display", "none");
+				d3.selectAll("#jobstories").style("display", "none");
 				d3.selectAll("#jobestcost").style("display", "block");
 				window.dispatchEvent(new Event('resize')); //ALLOW CHART TO FILL WIDTH OF DIV	
 
@@ -810,6 +978,62 @@ function ready(){
 					})	
 
 				d3.selectAll(".pointDwell")
+					.classed("selected", function(d){
+						return false;
+					})	
+				d3.selectAll(".pointStories")
+					.classed("selected", function(d){
+						return false;
+					})	
+					
+			}
+	};
+
+	storiesRadio.onchange = function(){
+			if(this.checked){
+				d3.selectAll(".pointSQFT").style("display", "none");
+				d3.selectAll(".pointCost").style("display", "none");
+				d3.selectAll(".pointDwell").style("display", "none");
+				d3.selectAll(".pointStories").style("display", "block");	
+
+				d3.selectAll(".legendSQFT").style("display", "none");
+				d3.selectAll(".legendCost").style("display", "none");
+				d3.selectAll(".legendPropDwell").style("display", "none");	
+				d3.selectAll(".legendStories").style("display", "block");
+
+				d3.selectAll(".summarytxt_sqft").style("display", "none");
+				d3.selectAll(".summarytxt_propdwell").style("display", "none");
+				d3.selectAll(".summarytxt_stories").style("display", "block");
+				d3.selectAll(".summarytxt_estcost").style("display", "none");	
+
+				d3.selectAll("#chart-boro-sqft").style("display", "none");
+				d3.selectAll("#chart-boro-propDwell").style("display", "none");
+				d3.selectAll("#chart-boro-stories").style("display", "block");
+				d3.selectAll("#chart-boro-estCost").style("display", "none");
+				window.dispatchEvent(new Event('resize')); //ALLOW CHART TO FILL WIDTH OF DIV	
+
+				d3.selectAll("#cdsqft").style("display", "none");
+				d3.selectAll("#cdpropdwell").style("display", "none");
+				d3.selectAll("#cdstories").style("display", "block");
+				d3.selectAll("#cdestcost").style("display", "none");
+				window.dispatchEvent(new Event('resize')); //ALLOW CHART TO FILL WIDTH OF DIV
+
+				d3.selectAll("#jobsqft").style("display", "none");
+				d3.selectAll("#jobdwell").style("display", "none");
+				d3.selectAll("#jobstories").style("display", "block");
+				d3.selectAll("#jobestcost").style("display", "none");
+				window.dispatchEvent(new Event('resize')); //ALLOW CHART TO FILL WIDTH OF DIV	
+
+				d3.selectAll(".pointSQFT")
+					.classed("selected", function(d){
+						return false;
+					})	
+
+				d3.selectAll(".pointDwell")
+					.classed("selected", function(d){
+						return false;
+					})	
+				d3.selectAll(".pointCost")
 					.classed("selected", function(d){
 						return false;
 					})	
@@ -1206,11 +1430,143 @@ function ready(){
 			pointsUpd.attr("r", function(d) { return radius(d.estCost  / proj.scale); });
 			pointsUpd.attr("stroke-width", 1 / proj.scale);		
 	});	
+
+
+	pointsOverlayStories = L.d3SvgOverlay(function(sel,proj){
+		var pointsUpd = sel.selectAll('circle').data(points);
+		var maxStories = d3.max(points.map(function(d) { return d.propStories }));
+		var minStories = d3.min(points.map(function(d) { return d.propStories }));
+		console.log(maxStories);
+		console.log(minStories);
+
+		createLegend(minStories,maxStories);
+
+		
+		
+		radius = d3.scale.sqrt()
+			.domain([0, maxStories])
+			//.range([1, 5])
+			.range([3, 45])
+				
+
+
+		function calcPropRadius(attributeValue) {
+
+			return Math.pow(attributeValue/2000,1/2)*100;
+		}
+		
+		function createLegend(minLabel, maxLabel) {
+			
+			legendStories = L.control( { position: "topleft" } );
+			
+			legendStories.onAdd = function(map) {
+				var legendContainer = L.DomUtil.create("div", "legendStories");
+				var symbolsContainerStories = L.DomUtil.create("div", "symbolsContainerStories");
+				var classes = [14, 174, 362];
+				var classesLegendVals = [legendNumFormat(minLabel), legendNumFormat(Math.round((maxLabel-minLabel)/2)), legendNumFormat(maxLabel)];
+				
+				var legendCircleStories;
+				var lastRadius = 0;
+				var currentRadius;
+				var margin;
+				
+				L.DomEvent.addListener(legendContainer, "mousedown", function(e) {
+					L.DomEvent.stopPropagation(e);
+				});
+				
+				$(legendContainer).append("<p id='legendTitleStories'>Proposed Stories</p>");
+				
+				for (var i = 0; i <= classes.length-1; i++) {
+					legendCircleStories = L.DomUtil.create("div", "legendCircleStories");
+					currentRadius = calcPropRadius(classes[i]);
+					margin = -currentRadius - lastRadius - 2;
+					
+					$(legendCircleStories).attr("style", "width: " + currentRadius*2 +
+							"px; height: " + currentRadius*2 +
+							"px; margin-left: " + margin + "px" );
+					
+					$(legendCircleStories).append("<span class='legendValueStories'>"+classesLegendVals[i]+"</span>");
+					
+					$(symbolsContainerStories).append(legendCircleStories);
+					
+					lastRadius = currentRadius;
+					console.log(classes[i]);
+				}
+				
+				$(legendContainer).append(symbolsContainerStories);
+				
+				return legendContainer;
+		
+				
+				};
+				
+		}
+			
+			
+			
+			
+		pointsUpd.enter()
+			.append('circle')		
+			.attr("bin",function(d){return d["BIN Number"]})
+			.attr('cx',function(d){return proj.latLngToLayerPoint(d.latLng).x;})
+			.attr('cy',function(d){return proj.latLngToLayerPoint(d.latLng).y;})
+			.attr('class', function(d){
+				return "pointStories";
+			})
+			.on('click', function(d){
+			
+				if(d3.select(this).style("fill-opacity") != 0){
+					tooltipCost.style("visibility", "visible");
+					tooltipCost.html(
+						'JOB TYPE: ' + d.jobType + '</br>' +
+						'JOB NUMBER: ' + d.jobNum + '</br>' +
+						'BIN: ' + d.bin + '</br>' +								
+						'ADDRESS: '+ d.address + '</br>' +
+						'BLOCK: ' + d.block + '</br>' +	
+						'LOT: ' + d.lot + '</br>' +	
+						'COMMUNITY DISTRICT: ' + d.CD + '</br>' +
+						'HORIZONTAL ENLARGEMENT: ' + d.horizEnl + '</br>' +
+						'VERTICAL ENLARGEMENT: ' + d.vertEnl + '</br>' +
+						'SQUARE FOOTAGE: ' + numberFormat(d.sqft) + '</br>' +
+						'PROPOSED DWELLING UNITS: ' + numberFormat(d.propDwell) + '</br>' +
+						'PROPOSED STORIES: ' + d.propStories + '</br>' +
+						'ESTIMATE COST ($): ' + numberFormat(d.estCost) + '</br>' +
+						'APPLICANT BUSINESS NAME: ' + d.appName + '</br>' +
+						'PERMIT ISSUANCE DATE: ' + d.issueDate + '</br>' +
+						'PERMIT EXPIRATION DATE: ' + d.expDate + '</br>'
+					)
+					if (d3.event.pageX > (width - 200)) {
+					   tooltipCost.style("left", (d3.event.pageX - 350) + "px");
+					} else {
+					   tooltipCost.style("left", (d3.event.pageX + 20) + "px")
+							.style("top", (d3.event.pageY -30) + "px");
+					}
+					if (d3.event.pageY > (height - 150)) {
+					   tooltipCost.style("top", (d3.event.pageY -100) + "px");
+					} else {
+					   tooltipCost.style("top", (d3.event.pageY -30) + "px");
+					}
+				}
+
+			})
+			.on("mouseover", function(d, i){
+				tooltipStories.transition().duration(0); 
+				$(this).attr("style", "cursor: pointer; fill: #eef442; fill-opacity: 0.5;");			
+			})
+			.on("mouseout", function(d, i){			
+				$(this).attr("style", 	"fill: #66A61E; fill-opacity: 0.5;" );
+				return tooltipStories.transition().delay(500).style("visibility", "hidden");
+			})
+			
+			pointsUpd.attr("r", function(d) { return radius(d.propStories  / proj.scale); });
+			pointsUpd.attr("stroke-width", 1 / proj.scale);		
+	});	
 	
 	
 	
 
 	d3.csv("data/Active NB_Alt 1 Enlargement Permits BIS and DOB NOW.csv",function(data){
+				//points = data.map(function(d){
 				points = data.filter(function(d) {
 					if( !isNaN(+d["Latitude Point"]) && !isNaN(+d["Longitude Point"]) ) {
 						return d;
@@ -1241,17 +1597,21 @@ function ready(){
 			pointsOverlaySQFT.addTo(map);
 			pointsOverlayPropDwell.addTo(map);
 			pointsOverlayCost.addTo(map);
+			pointsOverlayStories.addTo(map);
 			
 			d3.selectAll(".pointDwell").style("display", "none");
 			d3.selectAll(".pointCost").style("display", "none");
+			d3.selectAll(".pointStories").style("display", "none");
 			d3.selectAll(".pointSQFT").style("display", "block");
 			
 			legendSQFT.addTo(map);
 			legendPropDwell.addTo(map);
 			legendCost.addTo(map);
+			legendStories.addTo(map);
 			
 			d3.selectAll(".legendCost").style("display", "none");
 			d3.selectAll(".legendPropDwell").style("display", "none");
+			d3.selectAll(".legendStories").style("display", "none");
 			d3.selectAll(".legendSQFT").style("display", "block");
 			
 			
@@ -1944,7 +2304,236 @@ function ready(){
 					 var clickAdd = e.target.__data__;
 					 zoomToClickEstCost(clickAdd);
 					});					
-			}			
+			}	
+			
+			
+			//PROPOSED STORIES
+			
+			//TOTAL CITYWIDE PROPOSED STORIES
+			var totalStories = d3.sum(data.map(function(d) { return d.propStories }));
+			d3.select("#summary1_stories").html(numberFormat(totalStories));
+			console.log(totalStories);	
+
+			//PROPOSED STORIES BY BOROUGH
+			var nestBoroStories = d3.nest()
+				.key(function(d){return d.Borough;}).sortKeys(d3.ascending)
+				.rollup(function(v) { 
+					return d3.sum(v, function(d) {return d.propStories});
+				})
+				.entries(data)
+				console.log(nestBoroStories);
+				storiesBoroChart(nestBoroStories);	
+				
+			//TOP 5 COMMUNITY DISTRICTS
+			var nestCD_stories = d3.nest()
+				.key(function(d) { return d.CD; })
+				.rollup(function(v) {
+					return d3.sum(v, function(d) {return d.propStories});
+				})			
+				.entries(data)
+				.sort(function(a, b){ return d3.descending(a.values, b.values); }).slice(0,5);	
+			console.log(nestCD_stories);
+			storiesCDChart(nestCD_stories);
+			
+			//TOP 5 JOB SITES
+			var nestJob_stories = d3.nest()
+				.key(function(d) { return d.address; })
+				.rollup(function(v) {
+					return d3.sum(v, function(d) {return d.propStories});
+				})
+				.entries(data)
+				.sort(function(a, b){ return d3.descending(a.values, b.values); }).slice(0,5);	
+			console.log(nestJob_stories);
+			storiesJobChart(nestJob_stories);
+
+			function storiesBoroChart(data){
+				var storiesData = [
+					{
+						key: "totals",
+						values: []
+					}
+				];
+
+				// populate the empty object with your data
+				data.forEach(function (d){
+					d.values = +d.values
+					storiesData[0].values.push(d)
+				})     
+				
+				
+				nv.addGraph(function() {				
+					var chart = nv.models.discreteBarChart()
+						.x(function (d) {  
+							return d.key 
+						})
+						.y(function (d) { 
+							return d.values 
+						})
+						.duration(250)
+						.margin({top: 15, right: 10, bottom: 20, left: 50})
+						.color(['#66A61E']);
+					chart.yAxis.tickFormat(d3.format('.2s'));
+					chart.yAxis
+						.axisLabel('Proposed Stories')
+						.axisLabelDistance(-12);
+					chart.xAxis.tickFormat(function(d){
+						if (typeof this != 'undefined') {
+						 var el = d3.select(this);
+						 var p = d3.select(this.parentNode);
+						 p.append("foreignObject")
+							.attr('x', -100)
+							.attr("width", 200)
+							.attr("height", 200)
+							.append("xhtml:p")
+							.attr('style','word-wrap: break-word; text-align:center; font: normal 10px sans-serif;')
+							//.attr('class',function(){return ((d.toLowerCase().indexOf(wod.toLowerCase())>=0)?"tWOTD":"");})
+							.html(d);    
+							el.remove();
+							return d;
+						}
+					});		
+
+					d3.select('#chart-boro-stories svg')
+							.datum(storiesData)
+							.transition().duration(250)
+							.call(chart);
+					nv.utils.windowResize(chart.update);
+
+					
+				
+					return chart;
+				});
+				
+			}
+
+			function storiesCDChart(data){
+				var storiesCD_Data = [
+					{
+						key: "totals",
+						values: []
+					}
+				];
+
+				// populate the empty object with your data
+				data.forEach(function (d){
+					d.values = +d.values
+					storiesCD_Data[0].values.push(d)
+				})     
+				
+				
+				nv.addGraph(function() {				
+					var chart = nv.models.discreteBarChart()
+						.x(function (d) {  
+							return d.key 
+						})
+						.y(function (d) { 
+							return d.values 
+						})
+						.duration(250)
+						.margin({top: 15, right: 10, bottom: 20, left: 50})
+						//.options({height:75, width:400,})
+						.color(['#66A61E']);
+					chart.yAxis.tickFormat(d3.format('.2s'));
+					chart.yAxis
+						.axisLabel('Proposed Stories')
+						.axisLabelDistance(-12);
+					chart.xAxis.tickFormat(function(d){
+						if (typeof this != 'undefined') {
+						 var el = d3.select(this);
+						 var p = d3.select(this.parentNode);
+						 p.append("foreignObject")
+							.attr('x', -100)
+							.attr("width", 200)
+							.attr("height", 200)
+							.append("xhtml:p")
+							.attr('style','word-wrap: break-word; text-align:center; font: normal 10px sans-serif;')
+							//.attr('class',function(){return ((d.toLowerCase().indexOf(wod.toLowerCase())>=0)?"tWOTD":"");})
+							.html(d);    
+							el.remove();
+							return d;
+						}
+					});										
+					//d3.select('#chart-cd-propDwell svg')
+					d3.select('#cdstories')
+							.datum(storiesCD_Data)
+							.transition().duration(250)
+							.call(chart);
+					nv.utils.windowResize(chart.update);
+					return chart;
+				});
+			}	
+
+			function storiesJobChart(data){
+				var storiesJobData = [
+					{
+						key: "totals",
+						values: []
+					}
+				];
+
+				// populate the empty object with your data
+				data.forEach(function (d){
+					d.values = +d.values
+					storiesJobData[0].values.push(d)
+				})     
+								
+				nv.addGraph(function() {				
+					var chart = nv.models.discreteBarChart()
+						.x(function (d) {  
+							return d.key 
+						})
+						.y(function (d) { 
+							return d.values 
+						})
+						.duration(250)
+						.margin({top: 15, right: 10, left: 50})
+						.color(['#66A61E']);
+					chart.yAxis.tickFormat(d3.format('.2s'));
+					chart.yAxis
+						.axisLabel('Proposed Stories')
+						.axisLabelDistance(-12);
+
+					//chart.xAxis.axisLabel('Click Address to Highlight/Zoom to Location');
+					chart.xAxis.axisLabelDistance(10);
+					chart.xAxis.tickFormat(function(d){
+						if (typeof this != 'undefined') {
+						 var el = d3.select(this);
+						 var p = d3.select(this.parentNode);
+						 p.append("foreignObject")
+							.attr('x', -35)
+							//.attr('y', -15)
+							.attr("width", 70)
+							.attr("height", 200)
+							.append("xhtml:p")
+							.attr('style','word-wrap: break-word; text-align:center; font: normal 10px sans-serif; pointer-events: auto; cursor: pointer;')
+							.html(d);
+							el.remove();
+							return d;
+						}
+
+					});	
+										
+					d3.select('#jobstories')
+							.datum(storiesJobData)
+							.transition().duration(250)
+							.call(chart);
+					nv.utils.windowResize(chart.update);
+					return chart;
+				},
+					function(){
+						d3.selectAll("foreignObject").on('click',
+							function(){
+								console.log("test");
+							});
+					});
+									
+				$(document).on("click", "#jobstories", function(e) {
+					 console.log (e);
+					 console.log (e.target.__data__);
+					 var clickAdd = e.target.__data__;
+					 zoomToClickStories(clickAdd);
+					});					
+			}	
 			
 			
 			
@@ -2011,6 +2600,24 @@ function ready(){
 
 	}
 
+	function zoomToClickStories(add){
+		console.log(add);
+		d3.selectAll(".pointStories")
+			.style("fill", function(d){
+				if(d.address == add){return "#eef442"}
+				else{return "#66A61E"};
+			})
+			.classed("selected", function(d){
+				if(d.address == add){return true}
+				else{return false};
+			})
+
+		var clickCoordinatesStories = d3.selectAll(".selected").data()[0].latLng; //GET A COLUMN VALUE FROM SELECTED
+		console.log(clickCoordinatesStories);
+		zoomToSelectedStories(clickCoordinatesStories);
+
+	}
+
 	function zoomToSelectedSQFT(latlong){
 			map.setView(latlong,17);
 	}	
@@ -2018,6 +2625,9 @@ function ready(){
 			map.setView(latlong,17);
 	}
 	function zoomToSelectedCost(latlong){
+			map.setView(latlong,17);
+	}
+	function zoomToSelectedStories(latlong){
 			map.setView(latlong,17);
 	}
 	map.on('resize', function(){
