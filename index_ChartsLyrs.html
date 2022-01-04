@@ -2,6 +2,7 @@
 <html>
   <title>Active Major Construction</title>
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+  <link rel="icon" href="https://nycdob.github.io/ActiveNB_A1enlargements/data/iconlogo.png">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <!-- <link rel="stylesheet" type="text/css" href="keen/keen-dashboards.css" /> -->
   <link rel="stylesheet" type="text/css" href="https://nycdob.github.io/ActiveNB_A1enlargements/keen/keen-dashboards.css" />
@@ -234,17 +235,13 @@ svg {
 #chart-01{
     box-sizing: border-box;
     width: 100%;
-	<!-- height: 150px; -->
 	height: 100%;
-    <!-- border: 0.5px solid gray; -->
     float: left;
 	background-color: #c7c7c7;
-	<!-- margin: 0px 0px 12px; -->
 }
 #chart-boro-sqft{
     box-sizing: border-box;
     width: 100%;
-	<!-- height: 250px; -->
 	height: 100%;
     float: left;
 	background-color: #c7c7c7;
@@ -260,7 +257,6 @@ svg {
 #chart-boro-propDwell{
     box-sizing: border-box;
     width: 100%;
-	<!-- height: 250px; -->
 	height: 100%;
     float: left;
 	background-color: #c7c7c7;
@@ -270,7 +266,6 @@ svg {
 #chart-boro-estCost{
     box-sizing: border-box;
     width: 100%;
-	<!-- height: 250px; -->
 	height: 100%;
     float: left;
 	background-color: #c7c7c7;
@@ -280,7 +275,6 @@ svg {
 #chart-boro-stories{
     box-sizing: border-box;
     width: 100%;
-	<!-- height: 250px; -->
 	height: 100%;
     float: left;
 	background-color: #c7c7c7;
@@ -374,20 +368,16 @@ svg {
     box-sizing: border-box;
     width: 100%;
 	height: 250px;
-    <!-- border: 0.5px solid gray; -->
     float: left;
 	background-color: #c7c7c7;
-	<!-- margin: 0px 0px 12px; -->
 }
 
 #chart-04{
     box-sizing: border-box;
     width: 100%;
 	height: 250px;
-    <!-- border: 0.5px solid gray; -->
     float: left;
 	background-color: #c7c7c7;
-	<!-- margin: 0px 0px 12px; -->
 }
 .summarytxt{
 	font-size: 28px;
@@ -449,8 +439,6 @@ svg {
 	font-family: 'Open Sans', sans-serif;
 	font-family: 'Roboto', sans-serif;
 	text-align: center;
-	<!-- line-height: 97%; -->
-	<!-- padding-top: 10px; -->
 }
 #summary1_sqft{
 	font-size: 50px;
@@ -1570,7 +1558,8 @@ function ready(){
 	
 	
 
-	d3.csv("data/Active NB_Alt 1 Enlargement Permits BIS and DOB NOW.csv",function(data){
+	//d3.csv("data/Active NB_Alt 1 Enlargement Permits BIS and DOB NOW.csv",function(data){
+	d3.csv("https://raw.githubusercontent.com/NYCDOB/ActiveNB_A1enlargements/gh-pages/data/Active%20NB_Alt%201%20Enlargement%20Permits%20BIS%20and%20DOB%20NOW.csv",function(data){
 				//points = data.map(function(d){
 				points = data.filter(function(d) {
 					if( !isNaN(+d["Latitude Point"]) && !isNaN(+d["Longitude Point"]) ) {
